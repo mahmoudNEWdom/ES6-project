@@ -18,5 +18,5 @@ window.logout=function logout(){
 /* ============================================== */
 let home = document.querySelector(".home");
 home.addEventListener("click", function () {
-  location.replace("../page2/page2.html");
+  location.replace("../Mainhtml/page2.html");
 });

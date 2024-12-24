@@ -24,7 +24,7 @@ let productInfo = document.querySelector(".displayInfo");
 let product = JSON.parse(localStorage.getItem("cart"));
 console.log(product);
 let lastIndex = product.length - 1;
-product[lastIndex].img = `../page2/images/${product[lastIndex].name}.jpg`;
+product[lastIndex].img = `../images/${product[lastIndex].name}.jpg`;
 // console.log(product[lastIndex]);
 
 function displayProducts() {
@@ -50,7 +50,7 @@ let howmanyitems = document.getElementById("howmanyitems");
 window.addToCart = function addToCart(productId) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     console.log(cart);
-    product[0].img = `../page2/images/${product[0].name}.jpg`;
+    product[0].img = `../images/${product[0].name}.jpg`;
 
     const selectedProduct = product.find(p => p.id === productId);
     if (selectedProduct) {
@@ -61,18 +61,18 @@ window.addToCart = function addToCart(productId) {
 howmanyitems.innerHTML = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")).length : 0;
 
         }
-        window.open("../page4/page4.html", "_blank");
+        window.open("../Mainhtml/page4.html", "_blank");
     }
 };
 /* ---------------------cart------------------ */
 let cartend = document.getElementById("cartend");
 cartend.addEventListener("click", function(){
-    location.replace("../page4/page4.html");
+    location.replace("../Mainhtml/page4.html");
 })
 
 
 /* ---------------------homee -------------------- */
 let home = document.querySelector(".home");
 home.addEventListener("click", function(){
-    location.replace("../page2/page2.html");
+    location.replace("../Mainhtml/page2.html");
 })

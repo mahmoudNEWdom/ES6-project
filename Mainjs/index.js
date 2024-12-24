@@ -42,7 +42,7 @@ login.addEventListener('click', function() {
     }
     if (NameRegex.test(Name.value) && EmailRegex.test(Email.value) && PasswordRegex.test(Password.value) && (Confirm.value == Password.value)) {
         savecookie('Myuser',Name.value);
-        window.open('../page2/page2.html');
+        window.open('../Mainhtml/page2.html');
     }
 });
 /* ----------------cookies------------------ */

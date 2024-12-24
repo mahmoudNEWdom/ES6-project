@@ -19,7 +19,7 @@ let cookie = document.getElementById("cookie");
 cookie.innerHTML = getcookie();
 /* ---------------------slider--------------------------- */
 let img = document.querySelector("img");
-// img.setAttribute("src","./images/1.jpg");
+// img.setAttribute("src","../images/1.jpg");
 // let i = (img.getAttribute("src").split("/")[2].split(".")[0]);
 // console.log(i);
 setInterval(function(){
@@ -29,7 +29,7 @@ setInterval(function(){
     if(i>4){
         i=1;
     }
-    img.setAttribute("src","./images/"+i+".jpg");
+    img.setAttribute("src","../images/"+i+".jpg");
     // console.log(i);
 },10000);
 
@@ -41,7 +41,7 @@ window.next = function(){
     if(i>6){
         i=1;
     }
-    img.setAttribute("src","./images/"+i+".jpg");
+    img.setAttribute("src","../images/"+i+".jpg");
 }
 window.previous= function(){
     let i = Number(img.getAttribute("src").split("/")[2].split(".")[0]);
@@ -49,7 +49,7 @@ window.previous= function(){
     if(i<1){
         i=6;
     }
-    img.setAttribute("src","./images/"+i+".jpg");
+    img.setAttribute("src","../images/"+i+".jpg");
 }
 
 /* ---------------------LOGOUT----------------------------- */
@@ -63,105 +63,105 @@ let products =[
         name:"SamsungS23Ultra",
         price:900,
         description:"samsung 23 Ultra 128GB 5G",
-        img:"./images/SamsungS23Ultra.jpg"
+        img:"../images/SamsungS23Ultra.jpg"
     },
     {
         category:"phone",
         name:"Iphone",
         price:1000,
         description:"Iphone 12 128GB 5G", 
-        img:"./images/Iphone.jpg"
+        img:"../images/Iphone.jpg"
     },
     {
         category: "phone",
         name: "googlepixel",
         price: 800,
         description: "Google Pixel 7 Pro 256GB",
-        img: "./images/googlepixel.jpg"
+        img: "../images/googlepixel.jpg"
     },
     {
         category: "phone",
         name: "OnePlus",
         price: 750,
         description: "OnePlus 11 5G 256GB",
-        img: "./images/OnePlus.jpg"
+        img: "../images/OnePlus.jpg"
     },
     {
         category:"clothing",
         name:"jacket",
         price:20,
         description:"T-shirt 100% cotton size M",
-        img:"./images/jacket.jpg"
+        img:"../images/jacket.jpg"
     },
     {
         category:"clothing",
         name:"Jeans",
         price:50,
         description:"Jeans size 32",
-        img:"./images/Jeans.jpg"
+        img:"../images/Jeans.jpg"
     },
     {
         category: "clothing",
         name: "Sweater",
         price: 30,
         description: "Sweater 100% wool size L",
-        img: "./images/Sweater.jpg"
+        img: "../images/Sweater.jpg"
     },
     {
         category: "clothing",
         name: "Cap",
         price: 10,
         description: "Baseball cap, adjustable size",
-        img: "./images/Cap.jpg"
+        img: "../images/Cap.jpg"
     },
     {
         category: "clothing",
         name: "Hoodie",
         price: 40,
         description: "Unisex hoodie, fleece-lined, size L",
-        img: "./images/Hoodie.jpg"
+        img: "../images/Hoodie.jpg"
     },
     {
         category: "clothing",
         name: "Dress",
         price: 60,
         description: "Women's summer dress, floral pattern, size S",
-        img: "./images/Dress.jpg"
+        img: "../images/Dress.jpg"
     },
     {
         category: "clothing",
         name: "Shorts",
         price: 25,
         description: "Men's casual shorts, 100% cotton, size M",
-        img: "./images/Shorts.jpg"
+        img: "../images/Shorts.jpg"
     },
     {
         category:"laptop",
         name:"Macbookpro",
         price:1500,
         description:"Macbook pro 16 inch 1TB",
-        img:"./images/Macbookpro.jpg"
+        img:"../images/Macbookpro.jpg"
     },
     {
         category: "laptop",
         name: "HPEnvy",
         price: 1100,
         description: "HP Envy 13 inch 512GB SSD",
-        img: "./images/HPEnvy.jpg"
+        img: "../images/HPEnvy.jpg"
     },
     {
         category: "laptop",
         name: "LenovoThinkPad",
         price: 1000,
         description: "Lenovo ThinkPad X1 Carbon 14 inch 512GB SSD",
-        img: "./images/LenovoThinkPad.jpg"
+        img: "../images/LenovoThinkPad.jpg"
     },
     {
         category:"laptop",
         name:"DellXPS",
         price:1200,
         description:"Dell XPS 15 inch 512GB",
-        img:"./images/DellXPS.jpg"
+        img:"../images/DellXPS.jpg"
     }
 ]
 /*======================================================== */
@@ -214,7 +214,7 @@ viewers.forEach((viewer, index) => {
         localStorage.setItem("cart", JSON.stringify(cart));
 
         // Redirect to the next page
-        location.replace("../page3/page3.html");
+        location.replace("../Mainhtml/page3.html");
     });
 });
 
@@ -287,7 +287,7 @@ All.addEventListener("click", function() {
 /* ----------------------------------------------------------- >>>>>>>>>>>>>>>>>>>>>>> عدل علي الايقون */ 
 let cartend = document.getElementById("cartend");
 cartend.addEventListener("click", function(){
-    window.open("../page4/page4.html");
+    window.open("../Mainhtml/page4.html");
 /* -----------------------------------append--------------------------------------- */
 displayProducts("All");
 function displayProducts(category) {

@@ -12,7 +12,7 @@ cart.forEach((product) => {
     if (quantities[key]) {
         quantities[key]++;
     } else {
-        product.img = `../page2/images/${product.name}.jpg`;
+        product.img = `../images/${product.name}.jpg`;
         uniqueCart.push(product);
         quantities[key] = 1;
     }
@@ -114,7 +114,7 @@ checkoutDiv.appendChild(checkout);
 productList.appendChild(checkoutDiv);
 
 checkout.addEventListener("click", function () {
-    location.replace("../page5/page5.html");
+    location.replace("../Mainhtml/page5.html");
 });
 window.logout = function logout() {
     location.replace("../index.html");
@@ -122,5 +122,5 @@ window.logout = function logout() {
 
 let home = document.querySelector(".home");
 home.addEventListener("click", function () {
-    location.replace("../page2/page2.html");
+    location.replace("../Mainhtml/page2.html");
 });
