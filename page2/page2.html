@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><i class="fa fa-home " aria-hidden="true"></i>&NonBreakingSpace; <a class="home" href="#">Home</a></li>
+            <li> <i class="fa fa-info-circle" aria-hidden="true"></i>&NonBreakingSpace; <a href="#">About</a></li>
+            <li><i class="fa fa-phone" aria-hidden="true"></i> &NonBreakingSpace; <a href="#">Contact</a></li>
+        </ul>
+        <span id="logo">Swiss for Business</span>
+        <span id="cookie" style="font-style: italic; font-weight: 600; animation: jumpEffect 1.5s ease-in-out infinite;">User Name</span>
+        <button id="cartend"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> </button>
+        <main id="howmanyitems"></main>
+        <button href="#" onclick="logout()" id="logout">Logout</button>
+
+    </nav>
+    <div class="clear"></div>
+    <!-- --------slider------------ -->
+    <main>
+        <section class="slider">
+            <img src="./images/1.jpg" alt="">
+            <div onclick="next()" class="arrow_left"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+            <div onclick="previous()" class="arrow_right"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+        </section>
+    <!-- -------------------------- -->
+    <section class="ourProducts">Our Products</section>
+    <!-- ------------productsSelect--------------- -->
+    <section class="ProductsSelect">
+        
+        <button id="all" >All</button>
+        <button id="Clothing">Clothing</button>
+        <button id="laptop">Laptop</button>
+        <button id="phone">Phones</button>
+        
+    </section>
+    <div class="clear"></div>
+    <!-- ----------------------------------------- -->
+    <section class="product-list">
+    </section>
+    <div class="clear"></div>
+    </main>
+    <!-- -------------footer----------------- -->
+    <footer>
+        <p>&copy; Swiss for Business</p>
+        <a href="#logo"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+    </footer>
+    <script src="demo.js" type="module"></script>
+</body>
+</html>
