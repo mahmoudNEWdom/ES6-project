@@ -11,8 +11,8 @@ let spanConfirm = document.getElementById('spanConfirm');
 let login = document.getElementById('login');
 /* ---------------Regex------------------------- */
 let NameRegex = /^[a-zA-Z]/;
-let EmailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-let PasswordRegex = /^[a-zA-Z0-9]{6,}$/;
+let EmailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/;
+let PasswordRegex = /^[a-zA-Z0-9]{6,}/;
 /* -------------------test regex--------------------- */
 
 login.addEventListener('click', function() {
@@ -23,7 +23,7 @@ login.addEventListener('click', function() {
         spanName.innerHTML = '';
     }
     if (EmailRegex.test(Email.value) == false) {
-        spanEmail.innerHTML = 'Email must be valid';
+        spanEmail.innerHTML = 'Email is not valid';
         login.style.backgroundColor = 'grey';
     } else {
         spanEmail.innerHTML = '';
@@ -47,5 +47,7 @@ login.addEventListener('click', function() {
 });
 /* ----------------cookies------------------ */
 function savecookie(key,value) {
-    document.cookie = key + '=' + value+';path=/';
+    document.cookie = key + '=' + value;
 }
+localStorage.removeItem('cart');
+

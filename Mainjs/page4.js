@@ -1,45 +1,49 @@
+/* ------------------------------Save cookies--------------------------- */
+function getcookie(){
+    let cookie = document.cookie;
+    let user = {};
+    user = cookie.split("=")[1];
+    return user;
+}
+let cookie = document.getElementById("cookie");
+cookie.innerHTML = getcookie();
 /* --------------------get local storage cart--------------- */
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-console.log(cart); // array of objects
-
-// Track unique products and quantities
-let uniqueCart = [];
-let quantities = {};
-
-// Remove duplicates and count quantities
+let cart = JSON.parse(localStorage.getItem("cart"));
+/* ----------------handling dublicated items in local storage and push the to quantitie---------- */
+let uniqueCart = []; // Array to hold unique products that not repeated
+let quantities = {}; // Object to hold quantities of each product
+/* ---------------------Remove duplicates and count quantities-------------------------------- */
 cart.forEach((product) => {
     let key = product.name; // Use the product name as a unique identifier (you can change this if needed)
-    if (quantities[key]) {
-        quantities[key]++;
+    if (quantities[key]) { //==> if product name exists add 1 to the quantity
+        quantities[key]++;        
     } else {
-        product.img = `../images/${product.name}.jpg`;
         uniqueCart.push(product);
         quantities[key] = 1;
     }
+    product.img = `../images/${product.name}.jpg`;  //setup img path
 });
-
-// console.log("Unique Products:", uniqueCart);
-// console.log("Quantities:", quantities);
-
-/* -----------------------counter-------------------- */
+console.log(quantities);
+console.log(uniqueCart);
+/* -----------------------------number of products (red circle)----------------------------- */
 let howmanyitems = document.getElementById("howmanyitems");
 howmanyitems.innerHTML = cart.length;
-
-function plus(index) {
+/* -----------------------counter-------------------- */
+function plus(index) {  // index ==> the index of the product in the uniqueCart array مميز لكل card item انا واقف عليها
     let countElement = document.getElementById(`count-${index}`);
     let totalElement = document.getElementById(`total-${index}`);
     let count = parseInt(countElement.innerHTML) + 1;
     countElement.innerHTML = count;
 
-    total += uniqueCart[index].price;
+    total += uniqueCart[index].price; // price of the product 
+    
+    
     totalElement.innerHTML = uniqueCart[index].price * count;
     showTotalCount.textContent = `Total Price: $${total}`;
 
     // Increase howmanyitems by one
     howmanyitems.innerHTML = parseInt(howmanyitems.innerHTML) + 1;
 }
-
-
 function minus(index) {
     let countElement = document.getElementById(`count-${index}`);
     let totalElement = document.getElementById(`total-${index}`);
@@ -51,43 +55,29 @@ function minus(index) {
 
         totalElement.innerHTML = uniqueCart[index].price * count;
         showTotalCount.textContent = `Total Price: $${total}`;
-
         // Decrease howmanyitems by one
         howmanyitems.innerHTML = parseInt(howmanyitems.innerHTML) - 1;
-
-
     }
 }
-
-
-/* -----------------------total---------------------- */
+/* -----------------------total price of all items---------------------- */
 let totalElement = document.querySelector(".total-count-all");
 let total = 0;
 let div2 = document.createElement("div");
-
 uniqueCart.forEach((product) => {
     total += product.price * quantities[product.name];
 });
 
 let showTotalCount = document.querySelector(".showTotalCount");
 showTotalCount.appendChild(div2);
-showTotalCount.textContent = `Total Price: $${total}`;
+showTotalCount.textContent = `Total Price : $${total}`;
 
-
-/* -----------------------------------add to cart--------------------------------------------- */
-window.goodbye = function goodbye() {
-    location.replace("../page5/page5.html");
-};
-
-/* --------------------append items to HTML----------------- */
+/* --------------------append & Display the products in the cart page----------------- */
 let productList = document.querySelector(".product-list");
-window.onload = function () {
     uniqueCart.forEach((product, index) => {
         let name = product.name;
         let price = product.price;
         let img = product.img;
         let div = document.createElement("div");
-
         div.innerHTML = `
             <div class="product">
                 <img src="${img}" class="card-img-top" alt="...">
@@ -103,23 +93,23 @@ window.onload = function () {
         `;
         productList.appendChild(div);
     });
-};
-// Add a styled button below the total
-let checkoutDiv = document.createElement("div");
-let checkout = document.createElement("button");
-checkout.textContent = "checkout";
-checkout.classList.add("checkout-button"); // Add a class for styling
-checkoutDiv.classList.add("checkout-div"); // Add a class for styling
-checkoutDiv.appendChild(checkout);
-productList.appendChild(checkoutDiv);
 
-checkout.addEventListener("click", function () {
+// /* ---------------------append checkout button------------------ ---------------------------*/
+const checkoutDiv = document.createElement("div");
+checkoutDiv.classList.add("checkout-div");
+    checkoutDiv.innerHTML = `
+        <button class="checkout-button" onclick="checkout()">check out</button>
+        `;
+    productList.appendChild(checkoutDiv);   
+/* -----------------------------------Check out --------------------------------------------- */
+function checkout() {
     location.replace("../Mainhtml/page5.html");
-});
+};
+/* -----------------------------------logout --------------------------------------------- */
 window.logout = function logout() {
     location.replace("../index.html");
 };
-
+/* -----------------------------------home --------------------------------------------- */
 let home = document.querySelector(".home");
 home.addEventListener("click", function () {
     location.replace("../Mainhtml/page2.html");
