@@ -50,7 +50,7 @@ addToCartButton.addEventListener("click",
   let cart = JSON.parse(localStorage.getItem("cart"));
   howmanyitems.innerHTML = cart.length;
   localStorage.setItem("cart", JSON.stringify(cart));
-  location.assign("../Mainhtml/page4.html", "_blank");
+  location.replace("../Mainhtml/page4.html", "_blank");
 }
 );
 /* ----------pp--------------add to cart button on click ---------------pp------------ */

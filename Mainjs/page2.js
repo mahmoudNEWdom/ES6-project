@@ -185,7 +185,7 @@ function displayProducts(category) {
         let product = products[index];        
         cart.push(product);
         localStorage.setItem("cart", JSON.stringify(cart));
-        location.assign("../Mainhtml/page3.html");
+        location.replace("../Mainhtml/page3.html");
     });
 }); 
 /* ---------------------intial the local storage with empty array so thhe cart become 0 ----------------------- */
@@ -226,5 +226,5 @@ All.addEventListener("click", function() {
 /* ---------cart icon in the navbar ----------*/ 
 let cartend = document.getElementById("cartend");
 cartend.addEventListener("click", function(){
-    location.assign("../Mainhtml/page4.html");
+    location.replace("../Mainhtml/page4.html");
 });
