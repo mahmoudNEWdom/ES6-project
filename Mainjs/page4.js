@@ -7,6 +7,10 @@ function getcookie(){
 }
 let cookie = document.getElementById("cookie");
 cookie.innerHTML = getcookie();
+/* -----------------------------------logout --------------------------------------------- */
+window.logout = function logout() {
+    location.replace("../index.html");
+};
 /* --------------------get local storage cart--------------- */
 let cart = JSON.parse(localStorage.getItem("cart"));
 /* ----------------handling dublicated items in local storage and push the to quantitie---------- */
@@ -105,10 +109,7 @@ checkoutDiv.classList.add("checkout-div");
 function checkout() {
     location.replace("../Mainhtml/page5.html");
 };
-/* -----------------------------------logout --------------------------------------------- */
-window.logout = function logout() {
-    location.replace("../index.html");
-};
+
 /* -----------------------------------home --------------------------------------------- */
 let home = document.querySelector(".home");
 home.addEventListener("click", function () {
